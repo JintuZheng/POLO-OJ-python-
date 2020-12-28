@@ -1,0 +1,34 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "run student",
+            "type": "shell",
+            "command": "python student_machine.py"
+        },
+        {
+            "label": "run cache server",
+            "type": "shell",
+            "command": "python persistent_layer_cache_machine.py"
+        }
+        ,
+        {
+            "label": "run task scheduling system",
+            "type": "shell",
+            "command": "python task_scheduling_system.py"
+        }
+        ,
+        {
+            "label": "run worker server",
+            "type": "shell",
+            "command": "python worker_machine.py"
+        },
+        {
+            "label": "run all test",
+            "dependsOn":["run cache server","run worker server","run task scheduling system","run student"]
+        }
+
+    ]
+}
